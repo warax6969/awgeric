@@ -3,236 +3,101 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#151912">
-  <meta name="description" content="AWGERIC. Creator de conținut în scena rapului underground românesc. Media kit pentru branduri și colaborări.">
+  <meta name="theme-color" content="#0b0f09">
+  <meta name="description" content="AWGERIC. Creator de conținut în scena rapului underground românesc. Media kit pentru branduri.">
   <title>AWGERIC | Media kit</title>
-  <style>
-    :root {
-      color-scheme: dark;
-      --bg: #151912;
-      --panel: #1d231a;
-      --panel-soft: #22281e;
-      --white: #f0f1e9;
-      --muted: #b1b6a8;
-      --line: #3a4334;
-      --green: #99a97b;
-      --sans: Arial, Helvetica, sans-serif;
-      --mono: "Courier New", monospace;
-    }
-    * { box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
-    body { margin:0; color:var(--white); background:var(--bg); font:16px/1.55 var(--sans); isolation:isolate; }
-    body::before, body::after {
-      content:""; position:fixed; z-index:0; top:-28px; bottom:-28px; width:50vw;
-      pointer-events:none; background-repeat:no-repeat; background-size:cover; opacity:.82; will-change:transform;
-    }
-    body::before {
-      left:0; transform:translate3d(0,var(--left-parallax,0px),0); background-image:linear-gradient(rgba(21,25,18,.3),rgba(21,25,18,.3)),url("assets/awgeric-left-bg.png");
-      background-position:center,center 42%; mask-image:linear-gradient(90deg,#000 59%,transparent 100%);
-    }
-    body::after {
-      right:0; transform:translate3d(0,var(--right-parallax,0px),0); background-image:linear-gradient(rgba(21,25,18,.34),rgba(21,25,18,.34)),url("assets/awgeric-right-bg.png");
-      background-position:center,left 38%; mask-image:linear-gradient(270deg,#000 59%,transparent 100%);
-    }
-    a { color:inherit; }
-    .page { position:relative; z-index:1; width:min(1060px,calc(100% - 56px)); min-height:100vh; margin:0 auto; padding:0 34px; background:linear-gradient(90deg,rgba(21,25,18,.62) 0%,rgba(21,25,18,.9) 14%,rgba(21,25,18,.97) 27%,rgba(21,25,18,.97) 73%,rgba(21,25,18,.9) 86%,rgba(21,25,18,.62) 100%); }
-    .masthead { height:142px; margin:0 -34px; padding:18px 34px; position:relative; display:flex; align-items:flex-start; justify-content:space-between; overflow:hidden; background:#090a08 url("assets/awgeric-banner.jpg") center 49% / cover no-repeat; }
-    .masthead::before { content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(11,13,10,.72),rgba(11,13,10,.12) 54%,rgba(11,13,10,.5)),linear-gradient(0deg,rgba(21,25,18,.5),transparent 48%); }
-    .brand,.edition { position:relative; z-index:1; text-transform:uppercase; }
-    .brand { font-weight:800; font-size:13px; letter-spacing:.13em; }
-    .brand span { color:var(--green); }
-    .edition { color:#d1d3c9; font:10px var(--mono); letter-spacing:.12em; }
-    .intro { display:grid; grid-template-columns:1.05fr .95fr; gap:50px; align-items:end; padding:38px 0 34px; border-bottom:1px solid var(--line); }
-    .eyebrow,.section-index,.metric-label,.update-status { font:10px/1.4 var(--mono); letter-spacing:.11em; text-transform:uppercase; }
-    .eyebrow,.section-index { color:var(--green); }
-    h1 { margin:8px 0 0; font-size:clamp(56px,8vw,88px); line-height:.9; font-weight:800; letter-spacing:-.075em; }
-    .intro-copy { max-width:390px; color:#d1d4ca; font-size:15px; line-height:1.65; }
-    .intro-copy p { margin:0; }
-    .availability { margin-top:15px; display:flex; align-items:center; gap:8px; color:var(--white); font-size:12px; font-weight:700; }
-    .availability::before { content:""; width:7px; height:7px; border-radius:50%; background:var(--green); }
-    .section { padding:31px 0; border-bottom:1px solid var(--line); }
-    .section.scroll-reveal { opacity:0; transform:translateY(18px); transition:opacity .65s ease,transform .7s cubic-bezier(.2,.65,.3,1); }
-    .section.scroll-reveal.is-visible { opacity:1; transform:translateY(0); }
-    .section-heading { display:flex; align-items:baseline; gap:13px; margin-bottom:17px; }
-    h2 { margin:0; font-size:18px; line-height:1.2; letter-spacing:-.02em; }
-    .audience-heading { display:flex; align-items:baseline; flex-wrap:wrap; }
-    .update-status { margin-left:auto; display:inline-flex; align-items:center; gap:8px; color:var(--muted); letter-spacing:.05em; }
-    .live-dot { width:7px; height:7px; border-radius:50%; background:var(--green); box-shadow:0 0 0 3px rgba(153,169,123,.13); animation:pulse 2.8s ease-in-out infinite; }
-    @keyframes pulse { 0%,100% { opacity:1; box-shadow:0 0 0 3px rgba(153,169,123,.13); } 50% { opacity:.42; box-shadow:0 0 0 6px rgba(153,169,123,.04); } }
-    .metrics { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; }
-    .metric { min-height:132px; padding:16px; background:linear-gradient(145deg,rgba(34,40,30,.96),rgba(26,31,24,.95)); border:1px solid rgba(153,169,123,.17); display:flex; flex-direction:column; justify-content:space-between; }
-    .metric-label { min-height:28px; color:var(--muted); font-size:9px; letter-spacing:.07em; }
-    .metric-value { margin-top:15px; font-size:clamp(34px,4.7vw,50px); line-height:1; letter-spacing:-.065em; font-weight:750; }
-    .metric-value em { color:var(--green); font-style:normal; }
-    .metric-detail { margin-top:7px; color:var(--muted); font-size:11px; }
-    .profile-grid { display:grid; grid-template-columns:.82fr 1.18fr; gap:34px; align-items:start; }
-    .profile-copy { color:#c6c9bf; font-size:14px; }
-    .profile-copy p { margin:0; }
-    .profile-copy p + p { margin-top:12px; }
-    .fit-note { margin-top:22px; padding-top:16px; border-top:1px solid var(--line); color:var(--muted); font-size:12px; }
-    .fit-note strong { color:var(--green); font-size:10px; font-family:var(--mono); letter-spacing:.1em; text-transform:uppercase; display:block; margin-bottom:11px; }
-    .fit-tags { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
-    .fit-tags span { min-height:44px; display:flex; align-items:center; padding:8px 11px; border:1px solid rgba(153,169,123,.3); background:rgba(29,35,26,.86); color:#d8ddce; font-size:12px; line-height:1.35; }
-    .video-feature { overflow:hidden; background:var(--panel); border:1px solid rgba(153,169,123,.16); }
-    .video-preview { display:block; position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; background:#0b0d0a; }
-    .video-preview img { display:block; width:100%; height:100%; object-fit:cover; filter:saturate(.72); }
-    .play-button { position:absolute; inset:0; display:grid; place-items:center; background:rgba(0,0,0,.12); transition:background .2s ease; }
-    .play-button::before { content:""; width:54px; height:38px; border-radius:10px; background:#9b312b; }
-    .play-button::after { content:""; position:absolute; width:0; height:0; margin-left:4px; border-top:7px solid transparent; border-bottom:7px solid transparent; border-left:12px solid #fff; }
-    .video-preview:hover .play-button { background:rgba(0,0,0,.28); }
-    .video-caption { padding:13px 16px 15px; display:grid; grid-template-columns:1fr auto; gap:3px 16px; align-items:center; }
-    .video-title { font-size:16px; line-height:1.2; font-weight:700; }
-    .video-credit { color:var(--muted); font-size:11px; }
-    .video-proof { grid-column:2; grid-row:1 / span 2; text-align:right; }
-    .video-proof strong { display:block; font-size:22px; line-height:1; letter-spacing:-.04em; }
-    .video-proof span { color:var(--muted); font-size:9px; }
-    .scene { display:grid; grid-template-columns:.82fr 1.18fr; gap:34px; align-items:start; }
-    .scene-note { max-width:260px; margin:0; color:var(--muted); font-size:13px; }
-    .names { display:flex; align-items:center; flex-wrap:wrap; gap:13px 19px; }
-    .name { color:#e3e5dc; font-size:13px; }
-    .name-logo { display:flex; width:78px; height:58px; align-items:center; flex:0 0 78px; }
-    .name-logo img { display:block; width:78px; height:58px; object-fit:contain; }
-    .scene-rest { flex-basis:100%; color:var(--muted); font-size:11px; }
-    .contact-row { display:grid; grid-template-columns:1fr 1fr; gap:34px; }
-    .social-links { display:flex; flex-wrap:wrap; gap:17px; }
-    .social-links a { color:var(--white); font-size:12px; text-decoration-color:var(--line); text-underline-offset:4px; }
-    .social-links a:hover,.contact-details a:hover { color:var(--green); }
-    .contact-details { display:grid; gap:5px; color:var(--muted); font-size:12px; }
-    .contact-details a { color:var(--white); text-decoration-color:var(--line); text-underline-offset:3px; }
-    .contact-name { color:var(--white); font-weight:700; }
-    .footer { min-height:49px; display:flex; justify-content:space-between; align-items:center; gap:20px; color:var(--muted); font:9px var(--mono); letter-spacing:.08em; text-transform:uppercase; }
-    @media (max-width:760px) {
-      body::before,body::after { width:50vw; opacity:.72; }
-      .page { width:calc(100% - 30px); padding:0 22px; background:linear-gradient(90deg,rgba(21,25,18,.82),rgba(21,25,18,.97) 19%,rgba(21,25,18,.97) 81%,rgba(21,25,18,.82)); }
-      .masthead { margin:0 -22px; padding-inline:22px; height:116px; }
-      .intro { grid-template-columns:1fr; gap:15px; padding:30px 0 26px; }
-      .intro-copy { max-width:540px; }
-      .metrics { grid-template-columns:repeat(2,minmax(0,1fr)); }
-      .profile-grid,.scene,.contact-row { grid-template-columns:1fr; gap:20px; }
-      .profile-grid { gap:18px; }
-      .scene { gap:13px; }
-    }
-    @media (max-width:460px) {
-      body::before,body::after { width:50vw; opacity:.58; }
-      .page { width:calc(100% - 22px); padding:0 15px; background:linear-gradient(90deg,rgba(21,25,18,.9),rgba(21,25,18,.98) 18%,rgba(21,25,18,.98) 82%,rgba(21,25,18,.9)); }
-      .masthead { margin:0 -15px; padding-inline:15px; height:96px; }
-      .edition { font-size:8px; }
-      .metric { min-height:118px; padding:13px; }
-      .metric-value { font-size:37px; }
-      .metric-label { font-size:8px; }
-      .update-status { width:100%; margin:0 0 0 28px; font-size:9px; }
-      .video-caption { padding:12px; }
-      .footer { align-items:flex-start; flex-direction:column; justify-content:center; gap:4px; padding:11px 0; }
-    }
-    @media (max-width:760px) { body::before,body::after { will-change:auto; } }
-    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .live-dot { animation:none; } .section.scroll-reveal { opacity:1; transform:none; transition:none; } }
-  </style>
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/site.js" defer></script>
 </head>
 <body>
-  <main class="page">
-    <header class="masthead">
-      <div class="brand">AWG<span>✳</span>ERIC</div>
-      <div class="edition">Creator profile / România / 2026</div>
+  <div class="shell">
+    <header class="site-header">
+      <a class="wordmark" href="index.html">AWG<span>✳</span>ERIC</a>
+      <nav class="nav" aria-label="Navigare principală">
+        <a href="#stats">Stats</a>
+        <a href="#music">Music</a>
+        <a class="contact-link" href="contact.html">Contact ↗</a>
+      </nav>
     </header>
 
-    <section class="intro" aria-labelledby="title">
-      <div><div class="eyebrow">Media kit</div><h1 id="title">AWGERIC</h1></div>
-      <div class="intro-copy">
-        <p>Creator de conținut în scena rapului underground românesc. Descoperire de artiști, muzică nouă și cultură online.</p>
-        <div class="availability">Disponibil pentru colaborări</div>
-      </div>
-    </section>
+    <div class="banner" role="img" aria-label="Bannerul canalului AWGERIC"></div>
 
-    <section class="section" aria-labelledby="audience-title">
-      <div class="section-heading audience-heading"><span class="section-index">01</span><h2 id="audience-title">Audiență</h2><div class="update-status"><span class="live-dot" aria-hidden="true"></span>Statistici actualizate / 22.11.2026</div></div>
-      <div class="metrics">
-        <article class="metric"><div class="metric-label">TikTok / urmăritori</div><div><div class="metric-value">20K<em>+</em></div><div class="metric-detail">15K pe contul principal</div></div></article>
-        <article class="metric"><div class="metric-label">YouTube / vizualizări, 28 zile</div><div><div class="metric-value">143.9K</div><div class="metric-detail">Performanță recentă a canalului</div></div></article>
-        <article class="metric"><div class="metric-label">Spotify / lunar</div><div><div class="metric-value">8.6K</div><div class="metric-detail">Ascultători lunari</div></div></article>
-        <article class="metric"><div class="metric-label">Discord / comunitate</div><div><div class="metric-value">2.9K<em>~</em></div><div class="metric-detail">Membri în server</div></div></article>
-      </div>
-    </section>
-
-    <section class="section profile-grid" aria-label="Profil și exemplu de conținut">
-      <div>
-        <div class="section-heading"><span class="section-index">02</span><h2>Profil</h2></div>
-        <div class="profile-copy">
-          <p>AWGERIC conectează publicul cu artiștii și lansările din underground. Prezența sa se află la intersecția dintre conținut, descoperire muzicală și cultura rap online.</p>
-          <div class="fit-note"><strong>Potrivire de brand</strong><div class="fit-tags">
-            <span>Muzică & lansări</span><span>Echipamente de studio</span><span>Audio & căști</span><span>Periferice</span>
-            <span>Băuturi energizante</span><span>Festivaluri & evenimente</span><span>Jocuri video</span><span>Streetwear</span>
-            <span>Tech & gadgeturi</span><span>Platforme de streaming</span>
-          </div></div>
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <figure class="hero-portrait" data-reveal="left">
+          <img src="assets/awgeric-cutout.png" alt="AWGERIC purtând un hanorac negru, decupat pe fundal transparent">
+          <figcaption class="portrait-label">Creator / Romanian underground</figcaption>
+        </figure>
+        <div class="hero-content" data-reveal="right">
+          <div class="eyebrow">Media kit / 2026</div>
+          <h1 id="page-title">AWGERIC</h1>
+          <div class="intro-copy"><p class="salutation">To whom it may concern,</p><p>AWGERIC este creator de conținut în scena rapului underground românesc, cu focus pe artiști noi, lansări și cultură online.</p></div>
+          <div class="availability">Disponibil pentru colaborări</div>
+          <div class="stats-heading" id="stats"><span>Audiență</span><small><i class="live-indicator" aria-hidden="true"></i>Actualizat / 23.11.2026</small></div>
+          <div class="stats-grid">
+            <article class="stat-card" data-reveal="right"><div class="stat-label">TikTok / urmăritori</div><div><div class="stat-value">20K+</div><div class="stat-note">15K pe contul principal</div></div></article>
+            <article class="stat-card" data-reveal="right"><div class="stat-label">YouTube / vizualizări, 28 zile</div><div><div class="stat-value">143.9K</div><div class="stat-note">Vizualizări pe canal / 10K în ultimele 48h</div></div></article>
+            <article class="stat-card" data-reveal="right"><div class="stat-label">Spotify / lunar</div><div><div class="stat-value">8.6K</div><div class="stat-note">Ascultători lunari / 67K streamuri pentru „asta asta”</div></div></article>
+            <article class="stat-card" data-reveal="right"><div class="stat-label">Discord / membri</div><div><div class="stat-value">2.9K~</div><div class="stat-note">Comunitatea AWGERIC</div></div></article>
+          </div>
+          <a class="scroll-cue" href="#music" aria-label="Derulează la videoclipul muzical">↓</a>
         </div>
-      </div>
-      <article class="video-feature" aria-label="Exemplu de conținut">
-        <a class="video-preview" href="https://www.youtube.com/watch?v=H4MmL56k72c" target="_blank" rel="noreferrer" aria-label="Vezi videoclipul asta asta pe YouTube">
-          <img src="https://i.ytimg.com/vi/H4MmL56k72c/hqdefault.jpg" alt="Miniatura videoclipului asta asta de Censu și AWGERIC" loading="lazy"><span class="play-button" aria-hidden="true"></span>
-        </a>
-        <div class="video-caption"><div class="video-title">„asta asta”</div><div class="video-credit">Censu / găzduită pe canalele AWGERIC</div><div class="video-proof"><strong>67K</strong><span>streamuri Spotify</span></div></div>
-      </article>
-    </section>
+      </section>
 
-    <section class="section scene" aria-label="Legături în scenă">
-      <div><div class="section-heading"><span class="section-index">03</span><h2>În scenă</h2></div><p class="scene-note">Colaborări și legături cu artiști din noul val al rapului românesc.</p></div>
-      <div class="names">
-        <span class="name-logo"><img src="assets/ragectrl-mark.png" alt="RageCTRL"></span>
-        <span class="name">Censu</span><span class="name">Rocket</span><span class="name">TrapHouseMoldova</span><span class="name">BLT</span>
-        <span class="scene-rest">Și alți artiști din scenă.</span>
-      </div>
-    </section>
+      <section class="section" id="music" aria-labelledby="music-title">
+        <div class="section-heading" data-reveal="left"><span class="section-index">01</span><h2 id="music-title">Videoclip</h2></div>
+        <div class="music-layout">
+          <div class="video-feature" data-reveal="up">
+            <div class="video-frame" data-youtube-id="H4MmL56k72c">
+              <a class="video-fallback" href="https://www.youtube.com/watch?v=H4MmL56k72c" target="_blank" rel="noreferrer"><img src="https://i.ytimg.com/vi/H4MmL56k72c/hqdefault.jpg" alt="Miniatura videoclipului asta asta"><span>Vezi videoclipul pe YouTube ↗</span></a>
+            </div>
+            <div class="video-meta">
+              <div class="video-ident"><div class="video-title">„asta asta”</div><div class="video-subtitle">Censu · videoclip găzduit pe canalul AWGERIC</div></div>
+              <div class="video-meta-side">
+                <div class="video-views"><strong>37K</strong><span>vizualizări YouTube · 23.11.2026</span></div>
+                <a class="video-link" href="https://www.youtube.com/watch?v=H4MmL56k72c" target="_blank" rel="noreferrer">Deschide pe YouTube ↗</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    <section class="section contact-row" aria-label="Canale și contact">
-      <div><div class="section-heading"><span class="section-index">04</span><h2>Canale</h2></div><div class="social-links">
-        <a href="https://www.youtube.com/@ericawg" target="_blank" rel="noreferrer">YouTube ↗</a>
-        <a href="https://www.tiktok.com/@awgeric" target="_blank" rel="noreferrer">TikTok ↗</a>
-        <a href="https://www.instagram.com/awgeric/" target="_blank" rel="noreferrer">Instagram ↗</a>
-      </div></div>
-      <div><div class="section-heading"><span class="section-index">05</span><h2>Contact</h2></div><div class="contact-details">
-        <span class="contact-name">David Lukacs</span>
-        <a href="mailto:contact@awgeric.ro">contact@awgeric.ro</a>
-        <a href="tel:+40771057863">+40 771 057 863</a>
-      </div></div>
-    </section>
+      <section class="section collab-row" aria-labelledby="collab-title">
+        <div data-reveal="left"><div class="section-heading"><span class="section-index">02</span><h2 id="collab-title">În scenă</h2></div><p class="collab-copy">Conectat cu artiști și comunități din rapul underground românesc și regional.</p></div>
+        <div data-reveal="right"><div class="collab-list"><span>Censu</span><span>Rocket</span><span>TrapHouse<wbr>Moldova</span><span>BLT</span></div><p class="scene-rest">Și alți artiști din scenă.</p></div>
+      </section>
 
-    <footer class="footer"><span>AWGERIC / Media kit</span><span>Colaborări de brand / România</span></footer>
-  </main>
-  <script>
-    (() => {
-      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      const sections = document.querySelectorAll('.section');
+      <section class="section brand-fit" aria-labelledby="fit-title">
+        <div data-reveal="left">
+          <div class="section-heading"><span class="section-index">03</span><h2 id="fit-title">Potrivire de brand</h2></div>
+          <p class="fit-copy">Parteneriate firești pentru publicul, conținutul și comunitatea AWGERIC.</p>
+          <div class="fit-formats">
+            <span class="fit-formats-label">Formate de colaborare</span>
+            <ul class="fit-format-list">
+              <li>Integrări în videoclipuri</li>
+              <li>Conținut short-form</li>
+              <li>Promovare de lansări</li>
+              <li>Activări în comunitatea Discord</li>
+              <li>Integrări în livestreamuri</li>
+              <li>Prezentări de produse</li>
+              <li>Acoperire de festivaluri și evenimente</li>
+            </ul>
+          </div>
+        </div>
+        <div class="fit-grid" data-reveal="right"><span>Muzică & lansări</span><span>Echipamente de studio</span><span>Audio & căști</span><span>Periferice</span><span>Băuturi energizante</span><span>Festivaluri & evenimente</span><span>Jocuri video</span><span>Streetwear</span><span>Tech & gadgeturi</span><span>Platforme de streaming</span><span>Campanii social media</span><span>Aplicații & servicii digitale</span></div>
+      </section>
 
-      if (!reduceMotion && 'IntersectionObserver' in window) {
-        const observer = new IntersectionObserver((entries, currentObserver) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('is-visible');
-              currentObserver.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.12, rootMargin: '0px 0px -5% 0px' });
-
-        sections.forEach((section) => {
-          section.classList.add('scroll-reveal');
-          observer.observe(section);
-        });
-
-        if (window.matchMedia('(min-width: 761px)').matches) {
-          let frame = 0;
-          window.addEventListener('scroll', () => {
-            if (frame) return;
-            frame = window.requestAnimationFrame(() => {
-              const offset = Math.min(window.scrollY * 0.035, 28);
-              document.documentElement.style.setProperty('--left-parallax', `${-offset}px`);
-              document.documentElement.style.setProperty('--right-parallax', `${offset * 0.55}px`);
-              frame = 0;
-            });
-          }, { passive: true });
-        }
-      } else {
-        sections.forEach((section) => section.classList.add('is-visible'));
-      }
-    })();
-  </script>
+      <section class="channel-row" aria-label="Canale sociale">
+        <span class="channel-label">Canale oficiale</span>
+        <a class="channel-contact" href="contact.html">Contact ↗</a>
+        <div class="channel-links">
+          <a href="https://www.youtube.com/@ericawg" target="_blank" rel="noreferrer">YouTube ↗</a>
+          <a href="https://www.tiktok.com/@awgeric" target="_blank" rel="noreferrer">TikTok ↗</a>
+          <a href="https://www.instagram.com/awgeric/" target="_blank" rel="noreferrer">Instagram ↗</a>
+        </div>
+      </section>
+      <footer class="footer"><span>AWGERIC / Media kit</span><a href="contact.html">Contact ↗</a></footer>
+    </main>
+  </div>
 </body>
 </html>
